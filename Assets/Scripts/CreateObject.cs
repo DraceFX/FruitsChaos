@@ -48,7 +48,7 @@ public class CreateObject : MonoBehaviour
     private void CreatObj()
     {
         int rndObj = Random.Range(0, _objToSpawn.Count);
-        _obj = Instantiate(_objToSpawn[rndObj], Vector3.zero, Quaternion.identity);
+        _obj = Instantiate(_objToSpawn[rndObj], new Vector2(5, 5), Quaternion.identity);
         _obj.transform.SetParent(_parentObj);
 
         _obj.GetComponent<PolygonCollider2D>().isTrigger = true;

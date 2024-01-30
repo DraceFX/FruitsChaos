@@ -12333,8 +12333,8 @@ MonoBehaviour:
     atlasWidth: 512
     atlasHeight: 512
     characterSetSelectionMode: 6
-    characterSequence: 0000-04ff
-    referencedFontAssetGUID: 
+    characterSequence: 00,1D,20-7E,A0-17F,192,1FA-1FF,218-21B,2C6-2C7,2C9,2D8-2DD,37E,384-38A,38C,38E-3A1,3A3-3CE,401-40C,40E-44F,451-45C,45E-45F,490-491
+    referencedFontAssetGUID: 17cbeabba79e0f048b78f4b587a73072
     referencedTextAssetGUID: 
     fontStyle: 0
     fontStyleModifier: 0
@@ -12472,7 +12472,7 @@ Material:
     - _FaceColor: {r: 1, g: 0.5547322, b: 0.5235849, a: 1}
     - _GlowColor: {r: 1, g: 1, b: 1, a: 0.5}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
