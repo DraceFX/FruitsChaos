@@ -7,6 +7,7 @@ public class Points : MonoBehaviour
     public int point;
     public int topPoints;
 
+    [SerializeField] private AudioSource _mergeSound;
     [SerializeField] private TextMeshProUGUI _pointsText;
     [SerializeField] private TextMeshProUGUI _topPointsText;
     [SerializeField] private CreateObject _creatScript;
@@ -158,6 +159,8 @@ public class Points : MonoBehaviour
         }
 
         _pointsText.text = point.ToString();
+        _mergeSound.pitch = Random.Range(0.9f, 1.1f);
+        _mergeSound.Play();
 
         if (point < topPoints) return;
 

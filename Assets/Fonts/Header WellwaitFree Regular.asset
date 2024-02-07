@@ -4144,7 +4144,6 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - BEVEL_ON
   - GLOW_ON
   - UNDERLAY_ON
   m_InvalidKeywords: []
@@ -4229,8 +4228,8 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _GlowInner: 0.122
-    - _GlowOffset: -0.48
+    - _GlowInner: 0
+    - _GlowOffset: -1
     - _GlowOuter: 1
     - _GlowPower: 1
     - _GradientScale: 5
@@ -4249,7 +4248,7 @@ Material:
     - _Reflectivity: 10.07
     - _ScaleRatioA: 0.8
     - _ScaleRatioB: 0.7
-    - _ScaleRatioC: 0.35246727
+    - _ScaleRatioC: 0.4
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 1
@@ -4269,7 +4268,7 @@ Material:
     - _UnderlayDilate: 1
     - _UnderlayOffsetX: 0.66
     - _UnderlayOffsetY: -0.75
-    - _UnderlaySoftness: 0.236
+    - _UnderlaySoftness: 0
     - _VertexOffsetX: 0
     - _VertexOffsetY: 0
     - _WeightBold: 0.5

@@ -8,6 +8,8 @@ public class LosingTrigger : MonoBehaviour
     [SerializeField] private GameObject _pauseButton;
     [SerializeField] private TextMeshProUGUI _scoreText;
     [SerializeField] private Points _maxScore;
+    [SerializeField] private AudioSource _losingSound;
+    [SerializeField] private AudioSource _backroundMusic;
 
     private bool _isObjInTrigger = false;
     private float _timer = 0f;
@@ -42,6 +44,7 @@ public class LosingTrigger : MonoBehaviour
             if (_timer >= _timeToStayInTrigger)
             {
                 Losing();
+
                 _goInTrigger = null;
                 _isObjInTrigger = false;
             }
@@ -51,8 +54,11 @@ public class LosingTrigger : MonoBehaviour
     private void Losing()
     {
         _losingMenu.SetActive(true);
-        _scoreText.text = $"Вы набрали {_maxScore.point}";
         _pauseButton.SetActive(false);
+        _losingSound.Play();
+        _backroundMusic.Stop();
+
+        _scoreText.text = $"Вы набрали {_maxScore.point}";
         Time.timeScale = 0f;
     }
 }

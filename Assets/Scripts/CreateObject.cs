@@ -12,6 +12,7 @@ public class CreateObject : MonoBehaviour
 
     [SerializeField] private Transform _parentLine;
     [SerializeField] private Transform _parentObj;
+    [SerializeField] private AudioSource _click;
 
     private GameObject _obj;
     private List<Transform> _line;
@@ -35,12 +36,17 @@ public class CreateObject : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            _click.pitch = Random.Range(0.9f, 1.1f);
+            _click.Play();
+
             var doMerge = _obj.GetComponent<MergeSystem>();
             doMerge.doMerge = true;
+
             _obj.AddComponent<Rigidbody2D>();
             _obj.GetComponent<PolygonCollider2D>().isTrigger = false;
 
             CreatObj();
+
             _startTime = Time.time;
         }
     }
@@ -48,10 +54,11 @@ public class CreateObject : MonoBehaviour
     private void CreatObj()
     {
         int rndObj = Random.Range(0, _objToSpawn.Count);
+
         _obj = Instantiate(_objToSpawn[rndObj], new Vector2(5, 5), Quaternion.identity);
         _obj.transform.SetParent(_parentObj);
-
         _obj.GetComponent<PolygonCollider2D>().isTrigger = true;
+
         var doMerge = _obj.GetComponent<MergeSystem>();
         doMerge.doMerge = false;
     }
@@ -62,6 +69,7 @@ public class CreateObject : MonoBehaviour
         {
             yield return new WaitForSeconds(0.01f);
             value += 0.01f;
+
             Move();
         }
         StartCoroutine(MinusValue());
@@ -73,6 +81,7 @@ public class CreateObject : MonoBehaviour
         {
             yield return new WaitForSeconds(0.01f);
             value -= 0.01f;
+
             Move();
         }
         StartCoroutine(PlusValue());
