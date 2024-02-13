@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using YG;
 
 public class Points : MonoBehaviour
 {
@@ -168,6 +169,7 @@ public class Points : MonoBehaviour
         _topPointsText.text = $"рно {topPoints}";
 
         PlayerPrefs.SetInt("TOP", topPoints);
+        YandexGame.NewLeaderboardScores("LeaderboardScore", topPoints);
     }
 
     private void AddNewFruit(int numFruit)

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using YG;
 
 public class CreateObject : MonoBehaviour
 {
@@ -26,6 +27,11 @@ public class CreateObject : MonoBehaviour
 
         CreatObj();
         StartCoroutine(PlusValue());
+    }
+
+    private void Start()
+    {
+        YandexGame.FullscreenShow();
     }
 
     private void Update()
